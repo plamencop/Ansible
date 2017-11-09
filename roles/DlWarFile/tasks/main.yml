@@ -1,0 +1,17 @@
+---
+- name: Create Resources Folder
+  file:
+    path: docker-folder
+    state: directory
+
+- name: Clone
+  git:
+    repo: "http://{{ username }}:{{ password }}@13.115.55.128/gitlab/adopteam2/tomcat-container.git"
+    dest: docker-folder
+
+- name: Download war file
+  get_url:
+    url: "http://{{ username }}:{{ password }}@13.115.55.128/nexus/service/local/repositories/snapshots/content/TeamTwoCurrencyConverter/CurrencyConverter/1/CurrencyConverter-1.war"
+    dest: docker-folder/Resources
+    mode: 0644
+
