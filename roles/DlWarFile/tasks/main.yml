@@ -9,8 +9,10 @@
     repo: "http://{{ username }}:{{ password }}@34.197.236.172/gitlab/DTS_AdopwithChef/Tomcat.git"
     dest: docker-folder
 
+#- name: Download war file
+  #get_url:
+    #url: "http://{{ username }}:{{ password }}@34.197.236.172/nexus/service/local/repositories/snapshots/content/SnapshotsActivity/CurrencyConverter/1/CurrencyConverter-1.war"
+    #dest: docker-folder/Resources
+    #mode: 0644
 - name: Download war file
-  get_url:
-    url: "http://{{ username }}:{{ password }}@34.197.236.172/nexus/service/local/repositories/snapshots/content/SnapshotsActivity/CurrencyConverter/1/CurrencyConverter-1.war"
-    dest: docker-folder/Resources
-    mode: 0644
+  shell: "wget --user={{ username }} --password={{ password }} http://34.197.236.172/nexus/service/local/repositories/snapshots/content/SnapshotsActivity/CurrencyConverter/1/CurrencyConverter-1.war -P docker-folder/Resources"
