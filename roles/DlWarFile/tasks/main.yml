@@ -6,7 +6,7 @@
 
 - name: Clone
   git:
-    repo: "http://{{ username }}:{{ password }}@gitlab/gitlab/DTS_AdopwithChef/Tomcat.git"
+    repo: "http://{{ username }}:{{ password }}@34.197.236.172/gitlab/DTS_AdopwithChef/Tomcat.git"
     dest: docker-folder
 
 - name: Download war file
