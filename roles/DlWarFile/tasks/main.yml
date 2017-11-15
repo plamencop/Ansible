@@ -14,7 +14,7 @@
     url: "http://34.197.236.172/nexus/service/local/repositories/snapshots/content/SnapshotsActivity/CurrencyConverter/1/CurrencyConverter-1.war"
     dest: docker-folder/Resources
     mode: 0644
-    url_password: {{ password }}
-    url_username: {{ username }}
+    url_password: "{{ password }}"
+    url_username: "{{ username }}"
 #- name: Download war file
   #shell: "wget --user={{ username }} --password={{ password }} http://34.197.236.172/nexus/service/local/repositories/snapshots/content/SnapshotsActivity/CurrencyConverter/1/CurrencyConverter-1.war -P docker-folder/Resources"
